@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f90064, #ffb6c1, #ffd2e4, #ff85b6, #ff85a2);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 20px;
+    overflow-x: hidden; /* Remove horizontal scrolling */
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Section (from dashboard.css) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+}
+
+header .menu-link {
+    text-decoration: none;
+    background-color: #ff85b6;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+header .menu-link:hover {
+    transform: scale(1.1);
+    background-color: #f90064;
+}
+
+/* Marquee effect for header text */
+.header-marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.header-marquee h1 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 20px;
+    color: white;
+}
+
+/* Huge Text for "Your Birthday Calendar" */
+.huge-text {
+    position: absolute;
+    top: 15%; /* Adjusted position to create space between the header and calendar */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 72px; /* Large font size */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow to the text */
+    text-align: center;
+    z-index: 9999; /* Ensure it's on top of other elements */
+    letter-spacing: 4px; /* Adds spacing between letters */
+    white-space: nowrap; /* Ensures text stays on one line */
+    animation: fadeInText 3s ease-out; /* Optional: Fade-in animation */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.huge-text:hover {
+    transform: translateX(-50%) scale(1.1); /* Slightly scale up the text on hover */
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Calendar Container */
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 150px; /* Increased margin to create space for the text */
+}
+
+/* Calendar Row Layout */
+.calendar-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%; /* Ensures no horizontal scrolling */
+    margin-bottom: 20px;
+}
+
+/* Each Calendar Day Box */
+.calendar-day {
+    background-color: rgba(0, 0, 0, 0.6); /* Translucent black background */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 180px;  /* Increased box width */
+    height: 180px; /* Increased box height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+/* Bigger Numbers Inside Calendar Day Boxes */
+.calendar-day span.day-date {
+    font-size: 60px; /* Make the date numbers much bigger */
+    font-weight: bold;
+    color: #ffb6c1; /* Date text color */
+}
+
+/* Hover Effect for Scaling the Calendar Day Box */
+.calendar-day:hover {
+    transform: scale(1.1); /* Scale up the entire box */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darken the box on hover */
+}
+
+.calendar-day:hover span.day-date {
+    transform: scale(1.2); /* Slightly scale up the date text */
+    color: #fff; /* Change to white on hover */
+}
+
+/* For the other elements inside the calendar-day box (dates, buttons) */
+.calendar-day span.day-name {
+    font-size: 18px;
+    color: #ccc; /* Slightly lighter color for day name */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for text */
+}
+
+.calendar-day:hover span.day-name {
+    color: #fff; /* Change the day name color when hovered */
+}
+
+/* Long Bottom Row */
+.calendar-row.long-row {
+    justify-content: center;
+}
+
+/* Last Box (Saturday) - Make it longer horizontally */
+.calendar-row.long-row .calendar-day:last-child {
+    width: 880px; /* Increased width of the last box */
+}
+
+/* Day Buttons Inside Each Box */
+.day-button {
+    background-color: #ff85b6;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.day-button:hover {
+    background-color: #f90064;
+    transform: scale(1.1); /* Slightly scale up the button on hover */
+}
+
+/* Animated Decorations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+.animated-heart {
+    position: absolute;
+    color: #ff85b6;
+    font-size: 24px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.animated-heart:nth-child(1) {
+    left: 20%;
+    top: 30%;
+    animation-duration: 4s;
+}
+
+.animated-heart:nth-child(2) {
+    left: 60%;
+    top: 50%;
+    animation-duration: 5s;
+    font-size: 30px;
+}
+
+.animated-heart:nth-child(3) {
+    left: 80%;
+    top: 20%;
+    animation-duration: 6s;
+    font-size: 28px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7 Page</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="day7.css">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>A VERY VERY VERY HAPPY BIRTHDAY MY LOVE, CANT BELIEVE THEY DAY IS FINALLY HERE</h1>
+        <!-- Menu Button with Font Awesome Icon -->
+        <a href="dashboard.html" class="menu-link"><i class="fas fa-bars"></i></a>
+    </header>
+
+    <!-- Large Title in the Center -->
+    <div class="huge-text">
+        HAPPY BIRTHDAY MY LOVE
+    </div>
+
+    <!-- Audio Player Section -->
+    <div class="audio-player">
+        <!-- Image Display -->
+        <div class="audio-display">
+            <img src="day7.jpg" alt="Cloud Art" class="audio-image">
+        </div>
+
+        <!-- Custom Controls -->
+        <div class="controls">
+            <button id="prevButton" class="other-button"><i class="fas fa-backward"></i></button>
+            <button id="playButton" class="play-button"><i class="fas fa-play"></i></button>
+            <button id="pauseButton" class="play-button" style="display: none;"><i class="fas fa-pause"></i></button>
+            <button id="nextButton" class="other-button"><i class="fas fa-forward"></i></button>
+        </div>
+
+        <!-- Progress Bar -->
+        <input type="range" class="progress-bar" min="0" max="100" value="0">
+    </div>
+
+    <!-- Cute Window Section -->
+    <div class="cute-window">
+        <div class="cute-window-header">
+            <div class="dot-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <span class="cute-window-title">SONGS THAT REMIND ME OF U</span>
+            <div class="cute-window-controls">
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+                <span class="close"></span>
+            </div>
+        </div>
+        <div class="cute-window-body">
+            <p>HOPE YOU ENJOY THEM.</p>
+        </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+        <a href="flowers.html" target="_blank">
+            <button class="cute-button">A Lil Gift</button>
+        </a>
+        <a href="cake.html" target="_blank">
+            <button class="cute-button">Your Bday Cake</button>
+        </a>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" src="day7.m4a"></audio>
+
+    <!-- Link to the JavaScript file -->
+    <script src="day7.js"></script>
+</body>
+</html>

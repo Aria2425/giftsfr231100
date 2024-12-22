@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+  }
+  
+  #gameContainer {
+    text-align: center;
+  }
+  
+  canvas {
+    background-color: black;
+    border: 2px solid white;
+    margin-bottom: 20px;
+  }
+  
+  #gameInfo h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #guessInput {
+    padding: 10px;
+    font-size: 16px;
+    width: 50px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #guessButton {
+    background-color: #ffb6c1; /* Light pastel pink */
+  }
+  
+  #resetButton {
+    background-color: #ff77a9; /* Slightly darker pastel pink */
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  button:active {
+    background-color: #ff4c75; /* Darker pastel pink when clicked */
+  }
+  

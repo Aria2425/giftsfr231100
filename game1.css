@@ -1,0 +1,52 @@
+/* General styles */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fullscreen canvas */
+canvas {
+    display: block;
+    position: absolute;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+}
+
+/* Game over menu */
+#gameOverMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FF69B4; /* Dark pastel pink */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+#gameOverMenu.hidden {
+    display: none;
+}
+
+#gameOverMenu button {
+    background-color: #87CEEB; /* Button color */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+#gameOverMenu button:hover {
+    transform: scale(1.1); /* Make button bigger */
+    background-color: #6495ED; /* Hover color */
+}

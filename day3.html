@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 Page</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="day3.css">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>I know how busy everything is going on so just sit back relax and take a moment to hv sm silly fun
+            
+        </h1>
+        <!-- Menu Button with Font Awesome Icon -->
+        <a href="dashboard.html" class="menu-link"><i class="fas fa-bars"></i></a>
+    </header>
+
+    <!-- Large Title in the Center -->
+    <div class="huge-text">
+        DAY 3-MINI ARCADE
+    </div>
+
+    <!-- Audio Player Section -->
+    <div class="audio-player">
+        <!-- Image Display -->
+        <div class="audio-display">
+            <img src="day3.jpeg" alt="Cloud Art" class="audio-image">
+        </div>
+
+        <!-- Custom Controls -->
+        <div class="controls">
+            <button id="prevButton" class="other-button"><i class="fas fa-backward"></i></button>
+            <button id="playButton" class="play-button"><i class="fas fa-play"></i></button>
+            <button id="pauseButton" class="play-button" style="display: none;"><i class="fas fa-pause"></i></button>
+            <button id="nextButton" class="other-button"><i class="fas fa-forward"></i></button>
+        </div>
+        <div class="left-side">
+            <div class="game-box">
+                <div class="game-name">Falling Blocks</div>
+                <a href="game1.html" class="game-button">Play Game</a>
+            </div>
+            <div class="game-box">
+                <div class="game-name">Snake</div>
+                <a href="game2.html" class="game-button">Play Game</a>
+            </div>
+            <div class="game-box">
+                <div class="game-name">Hangman</div>
+                <a href="game3.html" class="game-button">Play Game</a>
+            </div>
+            <div class="game-box">
+                <div class="game-name">Bouncing Ball</div>
+                <a href="game4.html" class="game-button">Play Game</a>
+            </div>
+            
+            
+        </div>
+        
+
+        <!-- Progress Bar -->
+        <input type="range" class="progress-bar" min="0" max="100" value="0">
+    </div>
+    <div class="cute-window">
+        <div class="cute-window-header">
+            <div class="cute-window-controls">
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+                <span class="close"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" src="day3.m4a"></audio>
+    <!-- Link to the JavaScript file -->
+    <script src="day3.js"></script>
+</body>
+</html>

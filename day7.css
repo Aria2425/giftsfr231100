@@ -1,0 +1,340 @@
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f90064, #ffb6c1, #ffd2e4, #ff85b6, #ff85a2);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh; /* Increased for more vertical scrolling */
+    padding-bottom: 20px;
+    overflow-x: hidden; /* Remove horizontal scrolling */
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    width: 100%; /* Ensure it spans the entire width */
+}
+
+/* Header Marquee */
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Menu Button Positioned at Top Left, Vertically Centered */
+.menu-link {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-50%); /* Vertically center the button */
+    font-weight: bold;
+}
+
+/* Huge Text for the Title */
+.huge-text {
+    position: absolute;
+    top: 10%; /* Reduced space between the main text and audio player */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 72px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 999; /* Keep behind the header */
+    letter-spacing: 4px;
+    white-space: nowrap;
+    transition: font-size 0.3s ease;
+}
+
+/* Hover effect for main text */
+.huge-text:hover {
+    font-size: 80px; /* Slightly bigger on hover */
+}
+
+/* Audio Player Section - Not Fixed at the Top */
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Change from fixed to relative */
+    top: 110px; /* Adjust to be just below header */
+    left: 38%;
+    background: rgba(0, 0, 0, 0.6); /* Translucent black */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000; /* Keep it above other content */
+}
+
+.audio-player:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
+}
+
+/* Audio Image Display */
+.audio-display img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Audio Player Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.play-button, .other-button {
+    background: #ff85b6;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.play-button:hover, .other-button:hover {
+    transform: scale(1.2);
+    background: #f90064;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    margin-top: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+    overflow: hidden;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ff85b6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ff85b6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Cute Window */
+.cute-window {
+    position: absolute; /* Make the window absolute so it can move independently */
+    top: 150px; /* Default position, can be adjusted */
+    left: 50%; /* Default position, can be adjusted */
+    transform: translateX(-50%); /* Centers the window horizontally */
+    width: 1200px; /* Width is fixed */
+    background: rgba(0, 0, 0, 0.6); /* Translucent black background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Hide anything outside the container */
+    z-index: 1000; /* Keep it above other elements */
+    
+    /* Create a height-to-width ratio of 60% */
+    padding-top: 40%; /* Height is 60% of the width */
+    position: relative; /* To allow children to be positioned inside */
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth transition for scaling and background */
+}
+/* Button below the image */
+.show-image-button {
+    position: absolute;
+    top: 750px; /* Adjust position to be below the image */
+    left: 705px; /* Match the left position of the image */
+    background: #ff85b6;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+
+
+
+/* Cute Window Header and Body (adjust their position within the container) */
+.cute-window-header, .cute-window-body {
+    position: absolute; /* Position inside the container */
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Cute Window Header */
+.cute-window-header {
+    top: 0;
+    background-color: #ff85b6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Cute Window Body - Allows vertical scrolling */
+.cute-window-body {
+    top: 50px; /* Ensure body starts below the header */
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add space for scrollbar */
+    max-height: calc(100% - 50px); /* Account for the header height */
+}
+/* Button grid container for two rows */
+.button-grid {
+    display: flex;
+    justify-content: space-between; /* Space between the two rows */
+    gap: 2px; /* Space between the rows */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows rows to wrap if necessary */
+}
+
+/* Style for each button row */
+.button-row {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically in each row */
+    gap: 20px; /* Space between buttons in a row */
+}
+
+/* Style for individual buttons */
+.cute-button {
+    background-color: #ff85b6;
+    color: white;
+    padding: 15px 110px; /* Keeps vertical padding but adds more horizontal space */
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    flex-grow: 1; /* This makes each button take up equal space within the row */
+}
+
+
+/* Hover effect for buttons */
+.cute-button:hover {
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    background-color: #f90064; /* Change to darker pink on hover */
+}
+/* Add dot container */
+
+/* Dot container - position absolutely */
+.dot-container {
+    position: absolute;
+    top: 50%; /* Vertically center the dots */
+    right: 10px; /* Position dots near the right edge */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    display: flex;
+    gap: 6px; /* Space between dots */
+}
+
+/* Style for individual dots */
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for dots */
+.dot:hover {
+    background-color: #cccccc; /* Light gray on hover */
+}
+/* Container for the buttons */
+/* Button Container Styling */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Add space between the buttons */
+    margin-top: 170px; /* Add spacing from the cute window */
+}
+
+/* Button Styling */
+.cute-button {
+    background-color: #ff85b6; /* Light pink background */
+    color: white; /* White text */
+    padding: 12px 25px; /* Balanced padding for buttons */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px; /* Font size for text */
+    font-weight: bold; /* Bold text for better visibility */
+    text-align: center;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect for buttons */
+.cute-button:hover {
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    background-color: #f90064; /* Change to darker pink on hover */
+}

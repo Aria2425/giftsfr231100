@@ -1,0 +1,256 @@
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f90064, #ffb6c1, #ffd2e4, #ff85b6, #ff85a2);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh; /* Increased for more vertical scrolling */
+    padding-bottom: 20px;
+    overflow-x: hidden; /* Remove horizontal scrolling */
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    width: 100%; /* Ensure it spans the entire width */
+}
+
+/* Header Marquee */
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Menu Button Positioned at Top Left, Vertically Centered */
+.menu-link {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-50%); /* Vertically center the button */
+    font-weight: bold;
+}
+
+/* Huge Text for the Title */
+.huge-text {
+    position: absolute;
+    top: 10%; /* Reduced space between the main text and audio player */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 72px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 999; /* Keep behind the header */
+    letter-spacing: 4px;
+    white-space: nowrap;
+    transition: font-size 0.3s ease;
+}
+
+/* Hover effect for main text */
+.huge-text:hover {
+    font-size: 80px; /* Slightly bigger on hover */
+}
+
+/* Audio Player Section - Not Fixed at the Top */
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Change from fixed to relative */
+    top: 110px; /* Adjust to be just below header */
+    left: 20%;
+    background: rgba(0, 0, 0, 0.6); /* Translucent black */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000; /* Keep it above other content */
+}
+
+.audio-player:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
+}
+
+/* Audio Image Display */
+.audio-display img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Audio Player Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.play-button, .other-button {
+    background: #ff85b6;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.play-button:hover, .other-button:hover {
+    transform: scale(1.2);
+    background: #f90064;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    margin-top: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+    overflow: hidden;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ff85b6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ff85b6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Left Image */
+.left-image {
+    position: absolute;
+    top: 35%; /* Keep it in the same vertical position */
+    left: 700px; /* Keep it in the same horizontal position */
+    width: 300px; /* Same size */
+    height: auto;
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button below the image */
+.show-image-button {
+    position: absolute;
+    top: 73%; /* Adjust position to be below the image */
+    left: 705px; /* Match the left position of the image */
+    background: #ff85b6;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.show-image-button:hover {
+    transform: scale(1.1);
+    background: #f90064;
+}
+
+/* Hidden Image */
+.hidden-image {
+    position: absolute;
+    top: 170px; /* Same position as left-image */
+    left: 700px; /* Same position as left-image */
+    width: 300px; /* Same size as left-image */
+    height: auto;
+    display: none; /* Initially hidden */
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* Reveal Letter Button */
+.reveal-button {
+    position: absolute;
+    top: 73%; /* Align with the other button */
+    left: 865px; /* Positioned next to the show-image-button */
+    background: #ff85b6;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.reveal-button:hover {
+    transform: scale(1.1);
+    background: #f90064;
+}
+/* Left Image Hover Effect */
+.left-image:hover {
+    transform: scale(1.1); /* Slightly enlarge the image */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hidden Image Hover Effect */
+.hidden-image:hover {
+    transform: scale(1.1); /* Slightly enlarge the image */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+

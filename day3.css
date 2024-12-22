@@ -1,0 +1,319 @@
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f90064, #ffb6c1, #ffd2e4, #ff85b6, #ff85a2);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh; /* Increased for more vertical scrolling */
+    padding-bottom: 20px;
+    overflow-x: hidden; /* Remove horizontal scrolling */
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    width: 100%; /* Ensure it spans the entire width */
+}
+
+/* Header Marquee */
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.menu-link {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-50%); /* Vertically center the button */
+    font-weight: bold;
+}
+
+/* Huge Text for the Title */
+.huge-text {
+    position: absolute;
+    top: 10%; /* Reduced space between the main text and audio player */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 72px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 999; /* Keep behind the header */
+    letter-spacing: 4px;
+    white-space: nowrap;
+    transition: font-size 0.3s ease;
+}
+
+/* Hover effect for main text */
+.huge-text:hover {
+    font-size: 80px; /* Slightly bigger on hover */
+}
+
+/* Audio Player Section - Not Fixed at the Top */
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Change from fixed to relative */
+    top: 110px; /* Adjust to be just below header */
+    left: 60%;
+    background: rgba(0, 0, 0, 0.6); /* Translucent black */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000; /* Keep it above other content */
+}
+
+.audio-player:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
+}
+
+/* Audio Image Display */
+.audio-display img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Audio Player Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.play-button, .other-button {
+    background: #ff85b6;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.play-button:hover, .other-button:hover {
+    transform: scale(1.2);
+    background: #f90064;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    margin-top: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+    overflow: hidden;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ff85b6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ff85b6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Layout for Audio Player and Cute Window */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Spacing between the elements */
+    margin-top: 30px;
+}
+/* Left Side Section */
+/* Left Side Section */
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    position: absolute;
+    top: 90%; /* Position the container vertically at 50% of the page */
+    left: -350px; /* Position the container horizontally at 50% of the page */
+    transform: translate(-50%, -50%); /* Adjust to center precisely */
+    width: 1000px;
+}
+
+
+/* Box Style */
+/* Box Style */
+.box {
+    width: 500px;  /* Adjust the width */
+    height: 150px; /* Adjust the height */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* For hover effect */
+}
+
+
+/* Header Style for Each Box */
+.box-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Hover Effect for Boxes (grow on hover) */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Box Button */
+.box-button {
+    background-color: #ff85b6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* General Game Box Styling */
+/* General Game Box Styling */
+/* General Game Box Styling */
+.game-box {
+    width: 400px;  /* Adjust width of each game box */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Hover Effect for Game Boxes (only grow the hovered element) */
+.game-box:hover {
+    transform: scale(1.05);
+}
+
+/* Audio Player Section */
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 110px;
+    left: 60%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+/* Prevent scaling of audio player on hover */
+.audio-player:hover {
+    transform: none;  /* Remove scale on hover */
+}
+
+/* Game Name Styling */
+.game-name {
+    font-size: 30px;  /* Increase size for game names */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Game Button Styling */
+.game-button {
+    background-color: #ff85b6;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+/* Button Hover Effect */
+.game-button:hover {
+    background-color: #f90064;
+    transform: scale(1.1);
+}
+/* Audio Player Section */
+
+
+/* Audio Player Hover Effect */
+.audio-player:hover {
+    transform: scale(1.1);  /* Make it 10% bigger */
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
+}
+
+

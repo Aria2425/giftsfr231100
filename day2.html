@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 Page</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="day2.css">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Hey my love cant wait for your birthday im prolly more excited that u lol hope ur enjoying so far!</h1>
+        <!-- Menu Button with Font Awesome Icon -->
+        <a href="dashboard.html" class="menu-link"><i class="fas fa-bars"></i></a>
+    </header>
+
+    <!-- Large Title in the Center -->
+    <div class="huge-text">
+        DAY 2- MEMORY SONGS 
+    </div>
+
+    <!-- Audio Player Section -->
+    <div class="audio-player">
+        <!-- Image Display -->
+        <div class="audio-display">
+            <img src="day2.jpeg" alt="Cloud Art" class="audio-image">
+        </div>
+
+        <!-- Custom Controls -->
+        <div class="controls">
+            <button id="prevButton" class="other-button"><i class="fas fa-backward"></i></button>
+            <button id="playButton" class="play-button"><i class="fas fa-play"></i></button>
+            <button id="pauseButton" class="play-button" style="display: none;"><i class="fas fa-pause"></i></button>
+            <button id="nextButton" class="other-button"><i class="fas fa-forward"></i></button>
+        </div>
+
+        <!-- Progress Bar -->
+        <input type="range" class="progress-bar" min="0" max="100" value="0">
+    </div>
+    <div class="cute-window">
+        <div class="cute-window-header">
+            <div class="dot-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <span class="cute-window-title">SONGS THAT REMIND ME OF U</span>
+            <div class="cute-window-controls">
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+                <span class="close"></span>
+            </div>
+        </div>
+        <div class="cute-window-body">
+            <p>HOPE YOU ENJOY THEM.</p>
+        </div>
+        <div class="cute-window-body">
+            <p>HOPE YOU ENJOY THEM.</p>
+        
+            <!-- Grid of buttons with 2 rows and 7 columns -->
+            <div class="button-grid">
+                <div class="button-row">
+                    <a href="https://open.spotify.com/track/3hxIUxnT27p5WcmjGUXNwx" class="cute-button">Song 1</a>
+                    <a href="https://open.spotify.com/track/6dgUya35uo964z7GZXM07g" class="cute-button"> Song 2</a>
+                    <a href="https://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB" class="cute-button"> Song 3</a>
+                    <a href="https://open.spotify.com/track/7CyPwkp0oE8Ro9Dd5CUDjW" class="cute-button"> Song 4</a>
+                    <a href="https://open.spotify.com/track/75c2zaSdDBSX0A8Jyvm4fO" class="cute-button"> Song 5</a>
+                    <a href="https://open.spotify.com/track/5XeFesFbtLpXzIVDNQP22n" class="cute-button"> Song 6</a>
+                    <a href="https://open.spotify.com/track/2Ch7LmS7r2Gy2kc64wv3Bz" class="cute-button"> Song7</a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="https://open.spotify.com/track/40TZnaw4eDPChJNHw2Swf3" class="cute-button">Song 8</a>
+                    <a href="https://open.spotify.com/track/2plbrEY59IikOBgBGLjaoe" class="cute-button">Song 9</a>
+                    <a href="https://open.spotify.com/track/6MzofobZt2dm0Kf1hTThFz" class="cute-button">Song 10</a>
+                    <a href="https://open.spotify.com/track/0Lmbke3KNVFXtoH2mMSHCw" class="cute-button">Song 11</a>
+                    <a href="https://open.spotify.com/track/1m3AmzB8Sc3FdPRm3QpBhb" class="cute-button">Song 12</a>
+                    <a href="https://open.spotify.com/track/5vNRhkKd0yEAg8suGBpjeY" class="cute-button">Song 13</a>
+                    <a href="https://open.spotify.com/track/0ByMNEPAPpOR5H69DVrTNy" class="cute-button">Song 14</a>
+   
+  
+        <!-- Content here -->
+    </div>
+</div>
+
+                    
+        
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" src="day2.m4a"></audio>
+    <!-- Link to the JavaScript file -->
+    <script src="day2.js"></script>
+</body>
+</html>

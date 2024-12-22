@@ -1,0 +1,240 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f90064, #ffb6c1, #ffd2e4, #ff85b6, #ff85a2);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+}
+
+header .menu-link {
+    text-decoration: none;
+    background-color: #ff85b6;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+header .menu-link:hover {
+    transform: scale(1.1);
+    background-color: #f90064;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+}
+
+/* Left Content (Text and Button) */
+.content-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 20px;
+}
+
+.content-left h2 {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+.content-left h2:hover {
+    transform: scale(1.1);
+}
+
+.content-left .continue-button {
+    background-color: #ff85b6;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.content-left .continue-button:hover {
+    transform: scale(1.1);
+    background-color: #f90064;
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Right Content (Image) */
+.content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.content-right img {
+    max-width: 90%;
+    max-height: 400px;
+    border-radius: 10px;
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+}
+
+.content-right img:hover {
+    transform: scale(1.1);
+}
+
+/* Animated Decorations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+.animated-heart {
+    position: absolute;
+    color: #ff85b6;
+    font-size: 24px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.animated-heart:nth-child(1) {
+    left: 20%;
+    top: 30%;
+    animation-duration: 4s;
+}
+
+.animated-heart:nth-child(2) {
+    left: 60%;
+    top: 50%;
+    animation-duration: 5s;
+    font-size: 30px;
+}
+
+.animated-heart:nth-child(3) {
+    left: 80%;
+    top: 20%;
+    animation-duration: 6s;
+    font-size: 28px;
+}
+
+/* Marquee Text */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee span {
+    font-size: 36px;
+    padding-right: 20px;
+}
+/* Marquee effect for header text */
+.header-marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.header-marquee h1 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 20px; /* Add space for scrolling */
+    color: white; /* Ensure text is visible */
+}
