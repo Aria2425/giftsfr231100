@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
+
+    <!-- Include Google Sign-In API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script>
+        // Initialize the Google Sign-In client
+        function onSignIn(googleUser) {
+            // Get the Google user's basic profile information
+            var profile = googleUser.getBasicProfile();
+            var userId = profile.getId(); // Google user ID
+            var userName = profile.getName(); // User's name
+            var userEmail = profile.getEmail(); // User's email
+
+            console.log("Google Sign-In successful!");
+            console.log("ID: " + userId);
+            console.log("Name: " + userName);
+            console.log("Email: " + userEmail);
+
+            // Optionally, redirect the user to another page (e.g., dashboard)
+            window.location.href = "dashboard.html";
+        }
+
+        // Initialize the Google API
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com' // Replace with your actual Client ID
+            });
+        });
+    </script>
 </head>
+
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <!-- Corrected form -->
+        <!-- Login Form (Traditional) -->
         <form action="dashboard.html" method="get">
             <input type="text" placeholder="Username" required>
             <input type="password" placeholder="Password" required>
             <button type="submit">Log In</button>
         </form>
+
+        <div class="google-signin">
+            <h2>Or log in with Google</h2>
+            <!-- Google Sign-In Button -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
     </div>
 </body>
+
 </html>
